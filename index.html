@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/6f7637020e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles/style.css" />
+    <title>Blind Test</title>
+  </head>
+  <body>
+
+    <!--Son // Fait directement en JS-->
+    <!-- <audio autoplay="autoplay">
+        <source src="" type="audio/mp3" />
+        Votre navigateur n'est pas compatible
+    </audio> -->
+
+    <!--Pop-up au chargement de la page pour lancer la partie-->
+    <div>
+        <div data-modal-target="#modal" class="modal" id="modal">
+          <div class="modal-header">
+            <div class="modal-title">Prêt à jouer ?</div>
+          </div>
+          <div class="modal-body">
+              <a data-play-button class="modal-btn uppercase" id="play-button">Lancer la partie</a>
+          </div>
+        </div>
+        <div id="overlay"></div>
+    </div>
+
+    <!--Pop-up de fin de partie-->
+    <div>
+        <div data-modal-target="#modal" class="modal" id="endmodal">
+            <div class="modal-header">
+            <div class="modal-title">Fin de partie</div>
+            </div>
+            <div class="modal-body">
+                <div class="end-score-place">
+                    <p>Ton score</p>
+                    <p class="end-score"></p>
+                </div>
+                <div class="end-pictos">
+                    <div class="end-not-found-number end-style">
+                        <i class="fas fa-times"></i>
+                        <p></p>
+                    </div>
+                    <div class="end-artist-number end-style">
+                        <i class="fas fa-microphone-alt"></i>
+                        <p></p>
+                    </div>
+                    <div class="end-title-number end-style">
+                        <i class="fas fa-music"></i>
+                        <p></p>
+                    </div>
+                    <div class="end-found-number end-style">
+                        <i class="fas fa-check"></i>
+                        <p></p>
+                    </div>
+                    <div class="end-speed-number end-style">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <p></p>
+                    </div>
+                    <div class="end-combo-number end-style">
+                        <i class="fas fa-link"></i>
+                        <p></p>
+                    </div>
+                </div>
+                <a data-play-button class="modal-btn uppercase" id="play-button">Partie suivante</a>
+            </div>
+        </div>
+        <div id="overlay"></div>
+    </div>
+
+    <div class="container">
+
+        <!--TOP with categories / logo / points-->
+        <div class="header">
+            <div class="categories uppercase bold">
+                <i class="fas fa-bars closed"></i>
+                <i class="fas fa-times open"></i>
+                <p>Catégories</p>
+            </div>
+            <img class="logo" src="images/blind-test-logo-03.png" alt="logo"/>
+            <div></div>
+        </div>
+
+        <!--Answers Comments-->
+        <div id="fly-in" class="comments">
+            <!-- <div class="comments"></div> -->
+        </div>
+
+        <!--MIDDLE bullets / answer bar-->
+        <div class="extract">
+            <div class="past">
+                <div class="dot-shuttle left1 extract1 hidden"></div>
+                <div class="dot-shuttle left2 extract2 hidden"></div>
+                <div class="dot-shuttle left3 extract3 hidden"></div>
+                <div class="dot-shuttle left4 extract4 hidden"></div>
+                <div class="dot-shuttle left5 extract5 hidden"></div>
+                <div class="dot-shuttle left6 extract6 hidden"></div>
+                <div class="dot-shuttle left7 extract7 hidden"></div>
+                <div class="dot-shuttle left8 extract8 hidden"></div>
+                <div class="dot-shuttle left9 extract9 hidden"></div>
+                <div class="dot-shuttle left10 extract10 hidden"></div>
+                <div class="dot-shuttle left11 extract11 hidden"></div>
+                <div class="dot-shuttle left12 extract12 hidden"></div>
+                <div class="dot-shuttle left13 extract13 hidden"></div>   
+            </div>
+            <div class="current">
+                <div class="progress">
+                    <div class="progress-animation"></div>
+                </div>
+                <div class="answer-bar">
+                    <input type="text" minlength="1" class="typing" value="Le titre et/ou l'artiste"></input>
+                    <div class="ok uppercase bold">ok</div>
+                </div>
+            </div>
+            <div class="past coming">     
+                <div class="dot-shuttle right1 extract1"></div>
+                <div class="dot-shuttle right2 extract2"></div>
+                <div class="dot-shuttle right3 extract3"></div>
+                <div class="dot-shuttle right4 extract4"></div>
+                <div class="dot-shuttle right5 extract5"></div>
+                <div class="dot-shuttle right6 extract6"></div>
+                <div class="dot-shuttle right7 extract7"></div>
+                <div class="dot-shuttle right8 extract8"></div>
+                <div class="dot-shuttle right9 extract9"></div>
+                <div class="dot-shuttle right10 extract10"></div>
+                <div class="dot-shuttle right11 extract11"></div>
+                <div class="dot-shuttle right12 extract12"></div>
+                <div class="dot-shuttle right13 extract13"></div>   
+            </div>
+        </div>
+        
+        <!--BOTTOM with to find / last songs-->
+        <div class="info">
+            <div class="to-find">
+                <div class="bold">À trouver...</div>
+                <div class="artist answer not-found">
+                    <i class="fas fa-microphone-alt"></i>
+                    Artiste ?
+                    <i class="fas fa-times"></i>
+                </div>
+                <!-- <div class="answer found">
+                    <i class="fas fa-microphone-alt"></i>
+                    Nom de l'artiste
+                    <i class="fas fa-check"></i>
+                </div> -->
+                <div class="title answer not-found">
+                    <i class="fas fa-music"></i>
+                    Titre ?
+                    <i class="fas fa-times"></i>
+                </div>
+                <!-- <div class="answer found">
+                    <i class="fas fa-music"></i>
+                    Titre du morceau
+                    <i class="fas fa-check"></i>
+                </div> -->
+                <div class="bonus">
+                    <div class="answerBloc points uppercase">points</div>
+                    <div class="answerBloc speed not-found">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Rapidité
+                    </div>
+                    <div class="answerBloc combo not-found">
+                        <i class="fas fa-link"></i>
+                        Combo
+                    </div>
+                </div>
+            </div>
+            <div class="last-songs">
+                <div class="bold">Morceaux précédents...</div>
+                <div class="albums">
+                    <div class="album-grid HTML">
+                        <img class="album-img" src="./images/Prochain-album.png" alt="album cover"/>
+                        <p class="singer-name">Chanteur</p>
+                        <p class="song-name">Titre</p>
+                    </div>                    
+                </div>
+            </div>
+        </div>
+
+        <!--CATEGORIE OF THE BLIND TEST-->
+        <div class="current-categorie">Facile</div>
+
+    </div>
+
+    <script type="text/javascript" src="js/songs.js"></script>
+    <script type="text/javascript" src="js/score.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/audio-player.js"></script>
+
+    
+  </body>
+</html>
+
+
+
+    <!--PROGRESS BAR
+    <div class="progress progress-rounded progress-1">
+        <div class="progress-bar js-progress-bar-search"><p id="count">0%<p></div>
+    </div>
+    -->

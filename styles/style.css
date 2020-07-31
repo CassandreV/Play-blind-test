@@ -1,0 +1,534 @@
+/* PAGE STYLE */
+body, p {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cabin', sans-serif;
+    color: #e1e1e1;
+    font-size: 16px;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.bold {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.container {
+    background: linear-gradient( rgba(27,28,34,0.75) 100%, rgba(27,28,34,0.75)100%),url("https://cassandre-vanzetta.fr/wp-content/uploads/2020/07/edwin-andrade-6liebVeAfrY-unsplash.jpg");
+    background-color: #1b1c22;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0;
+    height: calc(100vh - 2vh);
+    width: calc(100vw - 20vw);
+    padding: 2vh 10vw 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* BULLET ON SIDES FOR EXTRACTS */
+
+.extract {
+    margin-left: -8vw;
+    margin-right: -8vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.past {
+    min-width: 190px;
+}
+
+.current {
+    margin: auto;
+}
+
+.coming {
+    text-align: right;
+}
+
+/* .coming {
+    width: 100%;
+    margin-top: -3.5vh;
+} */
+
+.dot-shuttle {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 6px;
+    background-color: #bbb;
+    color: transparent;
+    margin: .1vh;
+}
+
+.right {
+    float: right;
+}
+
+.hidden {
+    display: none;
+}
+/* 
+.extract1 {
+    position: absolute;
+    margin-left: 0px;
+    right: 0px;
+}
+
+.extract2 {
+    position: absolute;
+    margin-left: 10px;
+    right: 10px;
+}
+
+.extract3 {
+    position: absolute;
+    margin-left: 20px;
+    right: 20px;
+}
+
+.extract4 {
+    position: absolute;
+    margin-left: 30px;
+    right: 30px;
+}
+
+.extract5 {
+    position: absolute;
+    margin-left: 40px;
+    right: 40px;
+}
+
+.extract6 {
+    position: absolute;
+    margin-left: 50px;
+    right: 50px;
+}
+
+.extract7 {
+    position: absolute;
+    margin-left: 60px;
+    right: 60px;
+}
+
+.extract8 {
+    position: absolute;
+    margin-left: 70px;
+    right: 70px;
+}
+
+.extract9 {
+    position: absolute;
+    margin-left: 80px;
+    right: 80px;
+}
+
+.extract10 {
+    position: absolute;
+    margin-left: 90px;
+    right: 90px;
+}
+
+.extract11 {
+    position: absolute;
+    margin-left: 100px;
+    right: 100px;
+}
+
+.extract12 {
+    position: absolute;
+    margin-left: 110px;
+    right: 110px;
+}
+
+.extract13 {
+    position: absolute;
+    margin-left: 120px;
+    right: 120px;
+} */
+
+@keyframes run {
+    0% { left: 100%;}
+    100%{ left: 0%;}
+}
+
+
+/* TOP - HEADER */
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-top: 3vh;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.open {
+    display: none;
+}
+
+.closed, .open {
+    margin-right: 1vw;
+}
+
+.logo {
+    max-width: 160px;
+    object-fit: cover;
+    margin-top: -2vh;
+}
+
+
+/* MIDDLE - ANSWERS COMMENTS */
+.comments {
+    font-family: 'Special Elite', cursive;
+    color: #e1e1e1;
+    position: absolute;
+    right: 50vw;
+    top: 25.5vh;
+    text-align: center;
+    /* transform: rotate(-10deg); */
+
+    /* height: 10px;
+    width: 10px;
+    background: yellow; */
+    font-size: 20px;
+}
+
+.comments-animation {
+    animation: switch 10s linear;
+}
+
+/* ANIMATION STYLE */
+  
+#fly-in div {
+    position: fixed;
+    opacity: 0;
+    width: 80vw;
+    /* animation: switch 32s linear; */
+}
+  
+@keyframes switch {
+    0% { opacity: 0;filter: blur(20px); transform:scale(2)}
+    3% { opacity: 1;filter: blur(0); transform:scale(1)}
+    10% { opacity: 1;filter: blur(0); transform:scale(.9)}
+    13% { opacity: 0;filter: blur(10px); transform:scale(.1)}
+    80% { opacity: 0}
+    100% { opacity: 0}
+}
+
+
+/* MIDDLE - EXTRACTS */
+.progress {
+    height: 1.2vh;
+    background-color: #0f0f10;
+    width: 55vw;
+    margin: auto;
+    margin-bottom: auto;
+    border-radius: 6px 6px 0 0;
+    margin-bottom: -2px;
+}
+
+.progress-animation {
+    height: 1.2vh;
+    background-color: #5a7cfb;
+    width: 1%;
+    margin-bottom: auto;
+    border-radius: 6px 6px 0 0;
+    margin-bottom: -2px;
+}
+
+.answer-bar, input {
+    background-color: #25262c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 55vw;
+    margin: auto;
+    border-radius: 0 0 6px 6px;
+    border: none;
+    color: #e1e1e1;
+}
+
+input.typing:focus {
+    outline: none;
+}
+
+.typing {
+    padding: 1vw 2vw;
+}
+
+.ok {
+    background-color: #0f0f10;
+    border-radius: 0 0 6px 0;
+    padding: 1vw 2vw;
+    cursor: pointer;
+}
+
+
+/* BOTTOM - all */
+.info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.to-find .bold, .last-songs .bold {
+    margin-bottom: 4vh;
+}
+
+
+/* BOTTOM - TO FIND */
+.answer {
+    background-color: #25262c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 30vw;
+    margin: auto;
+    padding: .5vw 1vw;
+    border-radius: 1px;
+    margin-bottom: 2vh;
+    border: 1px solid #4c4c4c;
+}
+
+.answerBloc {
+    background-color: #25262c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: .5vw 1vw;
+    border-radius: 1px;
+}
+
+.answerBloc.speed, .answerBloc.combo {
+    border: 1px solid #4c4c4c;
+}
+
+.points {
+    background-color: #597cfb;
+    flex-grow: 1;
+    margin-right: 2vh;
+}
+
+.combo {
+    margin-left: 2vh;
+}
+
+.fas {
+    margin-right: 1vw;
+}
+
+.fa-microphone-alt {
+    width: 16px;
+    text-align: right;
+}
+
+.not-found {
+    color: #5e5e5e;
+}
+
+.not-found .fa-times {
+    color: #ff79a1;
+    font-size: 18px;
+}
+
+.found {
+    background-color: rgba(62, 129, 136, .7);
+    color:  #bbbfc0;
+}
+
+.found .fa-check {
+    color: #3e8188;
+    font-size: 18px;
+}
+
+.bonus {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* BOTTOM - LAST SONGS */
+.last-songs {
+    width: 53vw;
+    margin-right: -10vw;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    -ms-overflow-style: none;  /* hide scrollbar - IE and Edge */
+    scrollbar-width: none;  /* hide scrollbar - Firefox */
+}
+
+.last-songs::-webkit-scrollbar {
+    display: none;
+}
+
+.albums {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.album-grid {
+    width: 10vw;
+    font-size: 14px;
+    margin-right: 1.5vw;
+}
+
+.singer-name {
+    margin-top: 1vh;
+}
+
+.song-name {
+    color: #5c5d63;
+    font-size: 13px;
+}
+
+.albums img {
+    max-width: 8vw;
+    min-height: 8vw;
+    object-fit: cover;
+    border-radius: 12%;
+}
+
+/* CATEGORIE OF THE BLIND TEST */
+.current-categorie {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 17vh;
+    color: rgba(255,255,255,0.1);
+    text-align: right;
+    margin-right: -10vw;
+}
+
+
+
+/* MODAL */
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 2px solid #25262c;
+    border-radius: 6px;
+    z-index: 10;
+    background-color: #0f0f10;
+    width: auto;
+    max-width: 80%;
+    padding: 2vh 5vw;
+}
+  
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+  
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border-bottom: 1px solid #25262c; */
+}
+  
+.modal-header .modal-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+  
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.modal-body {
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+}
+  
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    pointer-events: none;
+}
+  
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-btn {
+    background: #5a7cfb;
+    padding: .5vh 1vw;
+    cursor: pointer;
+}
+
+
+
+/* END MODAL */
+#endmodal .modal-title {
+    margin-bottom: 2vh;
+    text-transform: uppercase;
+}
+
+#endmodal a {
+    align-self: center;
+}
+
+.end-pictos {
+    display: flex;
+    margin-bottom: 4vh;
+}
+
+.end-style {
+    color: #5e5e5e;
+    display: flex;
+    background: #25262c;
+    margin: 1vh;
+    padding: 0.7vh 1vh;
+    border-radius: 5px;
+    min-width: 5vw;
+    justify-content: center;
+}
+
+.end-score-place {
+    text-align: center;
+}
+
+.end-score {
+    font-size: 32px;
+    font-weight: 700;
+    color: #5a7cfb;
+    margin-bottom: 3vh;
+}
